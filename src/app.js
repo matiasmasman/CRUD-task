@@ -8,6 +8,11 @@ const tasksRoutes = require('./routes/tasks');
 const app = express();
 app.set('port', 3000);
 
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
+
 app.set('views', __dirname + '/views');
 app.engine('.hbs', engine({
     extname: '.hbs'
@@ -19,7 +24,7 @@ app.use(myconnection(mysql, {
     user: 'root',
     password: '',
     database: 'crud-task'
-}));
+}, 'single'));
 
 app.listen(app.get('port'), () => {
     console.log('Listening on port', app.get('port'));
