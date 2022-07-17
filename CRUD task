@@ -1,0 +1,5 @@
+CRUD task
+
+express-handlebars: motor de renderizado en HTML
+express-myconnection: conectar la db con express
+body-parser:
