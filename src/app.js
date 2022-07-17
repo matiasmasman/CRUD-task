@@ -3,6 +3,7 @@ const { engine } = require('express-handlebars');
 const myconnection = require('express-myconnection');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
+const tasksRoutes = require('./routes/tasks');
 
 const app = express();
 app.set('port', 3000);
@@ -23,6 +24,8 @@ app.use(myconnection(mysql, {
 app.listen(app.get('port'), () => {
     console.log('Listening on port', app.get('port'));
 });
+
+app.use('/', tasksRoutes);
 
 app.get('/', (req, res) => {
     res.render('home');
