@@ -1,7 +1,7 @@
 # CRUD-task
 
 # DEPENDENCIAS
-npm i express mysql express-handlebars express-myconnection body-parser
+npm i express mysql express-handlebars express-myconnection
 npm i nodemon
 
 # CREAR DB
